@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="200" height="200"
+xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>Hello World</title>
+<desc>A greeting to the world</desc>
+
+<defs>
+</defs>
+
+<!-- the drawing will go here -->
+<g>Hello World
+<text x="100" y="100">Hello World
+</text>
+</g>
+</svg>
