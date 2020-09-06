@@ -29,3 +29,14 @@ step 6:
     git push <origin_alias> master
     
 "multilingual" is just an example, I could have used "<repo_name>" as placeholder. <ssh_host_alias>, <origin_alias> are placeholders named intentionally so to express their purposes.
+
+Note that when you enter "git remote -v" in the newly created repository, it will output:
+
+<origin_alias> git@<ssh_host_alias>:<top_level_dir_at_github_alias_account_name>/multilingual (fetch)
+<origin_alias> git@<ssh_host_alias>:<top_level_dir_at_github_alias_account_name>/multilingual (push)
+
+To clone the repository in another location - you probably want to do that on another machine - use this command (mind the string .git at the end!)
+
+git clone  git@<ssh_host_alias>:<top_level_dir_at_github_alias_account_name>/multilingual.git 
+
+Of course this is assuming that you have done the same git/ssh configuration, if it is on another machine.
