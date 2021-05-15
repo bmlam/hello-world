@@ -1,4 +1,4 @@
-# hello-world
+# hello-world - hook repos on my machine to GitHub
 My first-step project to get myself familiary with GitHub
 
 I just succeeded in configuring git on my Unix desktop to use my first github account as remote repository, not in the default way that is meant for new users who normally work with one single github remote. The default way saves new users a lot of configuration work. But in my case I plan to work with multiple github remotes / accounts, so I did this config exercise with my first account.
@@ -23,7 +23,7 @@ step 4:
     Created the local multilingual repo with "git init ."
     
 step 5:
-    git add <origin_alias> git@<ssh_host_alias>:<top_level_dir_at_github_alias_account_name>/multilingual.git
+    git remote add <origin_alias> git@<ssh_host_alias>:<top_level_dir_at_github_alias_account_name>/multilingual.git
     
 step 6:
     git push <origin_alias> master
