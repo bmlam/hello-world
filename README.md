@@ -40,3 +40,12 @@ To clone the repository in another location - you probably want to do that on an
 git clone  git@<ssh_host_alias>:<top_level_dir_at_github_alias_account_name>/multilingual.git 
 
 Of course this is assuming that you have done the same git/ssh configuration, if it is on another machine.
+
+At some point of time, the local repositories which I created when first started off with github no longer could push to remote, getting error similar to "password authentication no longer allowed". Those are the one where "git remote -v" shows 
+
+    https//github.com/bmlam/<repo-name>.git
+
+bmlam is my first github "account" name. Since I have added a public ssh key in this account for my PC and created an ssh_host_alias a while ago, I just needed to replace the remote URL with 
+    git@<ssh_host_alias>:bmlam/<repo-name>.gi
+    
+Thereafter, "git push" worked again.
