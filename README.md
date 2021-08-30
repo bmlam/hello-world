@@ -46,6 +46,7 @@ At some point of time, the local repositories which I created when first started
     https//github.com/bmlam/<repo-name>.git
 
 bmlam is my first github "account" name. Since I have added a public ssh key in this account for my PC and created an ssh_host_alias a while ago, I just needed to replace the remote URL with 
-    git@<ssh_host_alias>:bmlam/<repo-name>.gi
+
+    git@<ssh_host_alias>:bmlam/<repo-name>.git
     
 Thereafter, "git push" worked again.
