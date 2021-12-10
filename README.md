@@ -1,7 +1,6 @@
-# hello-world - hook repos on my machine to GitHub
-My first-step project to get myself familiary with GitHub
+# hello-world - connect local repositories to GitHub using ssh host alias
 
-I just succeeded in configuring git on my Unix desktop to use my first github account as remote repository, not in the default way that is meant for new users who normally work with one single github remote. The default way saves new users a lot of configuration work. But in my case I plan to work with multiple github remotes / accounts, so I did this config exercise with my first account.
+I first worked with local repository connected to a single github account using the default method. That means the remote URL is analogue to what you would enter into the browser address fieled. The default way saves new users a lot of configuration work. But when one has to work with multiple github remotes / accounts, the game became a bit more complex. Basically one has to configure each remote account as ssh host alias on the local machine.
 
 These are the steps:
 
@@ -41,12 +40,16 @@ git clone  git@<ssh_host_alias>:<top_level_dir_at_github_alias_account_name>/mul
 
 Of course this is assuming that you have done the same git/ssh configuration, if it is on another machine.
 
-At some point of time, the local repositories which I created when first started off with github no longer could push to remote, getting error similar to "password authentication no longer allowed". Those are the one where "git remote -v" shows 
+I have created other repositories using the default authentication method, i.e., "git remote -v" will display the URL matching the one you would use in a web browser. I decided to no longer use this default method. So I added another host alias in ~/.ssh/config. This is also a good idea because at some point of time, Github depricated this method and the local repositories which I had created with this method no longer could push to remote, getting error similar to "password authentication no longer allowed". I needed to change the repositority which had this remote URL 
 
     https//github.com/bmlam/<repo-name>.git
-
-bmlam is my first github "account" name. Since I have added a public ssh key in this account for my PC and created an ssh_host_alias a while ago, I just needed to replace the remote URL with 
-
-    git@<ssh_host_alias>:bmlam/<repo-name>.git
     
-Thereafter, "git push" worked again.
+to something else. bmlam was my first github account. Besides adding an alias entry in .ssh/config, I had to store the public key in the github account. Next step was to replace in each repository the remote URL with 
+
+    git remote set-url origin git@<ssh_host_alias>:bmlam/<repo-name>
+    
+Thereafter, "git push" worked again. Below is an example git command that did the magic:
+
+    git remote set-url origin git@my-github1:bmlam/apex_konten_bewegungen
+    
+This same hack/command is applicable when I clone the repository afresh from https://github.com/bmlam/apex_konten_bewegung. The cloning would work with a personal access token and a local repo created. But thereafter pull and push would not work until this hack has been applied.
